@@ -5,7 +5,7 @@ cbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2",
 
 ############Data loading functions#################
 getStats <- function(){
-    stats <- read.csv("C:/Users/Administrator/Desktop/CAMPEP Pet Project/CAMPEP Stats.csv", stringsAsFactors=FALSE)
+    stats <- read.csv("../CAMPEP Stats.csv", stringsAsFactors=FALSE)
     stats$pct.acc <- format(ifelse(stats$Applicants > 0, 100*stats$Offers/stats$Applicants, 0),digits=2)
     stats$pct.res <- format(100*stats$Residency/stats$Graduated, digits=2)
     colnames(stats) <- c("School.Name", "Website", "Campep.Degrees", 
@@ -18,7 +18,7 @@ getStats <- function(){
     }
 
 getAddresses <- function(){
-    Addresses <- read.csv("C:/Users/Administrator/Desktop/CAMPEP Pet Project/Addresses.csv", stringsAsFactors=FALSE) 
+    Addresses <- read.csv("../Addresses.csv", stringsAsFactors=FALSE) 
     return(Addresses)
     }
     
